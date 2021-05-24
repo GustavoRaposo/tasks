@@ -1,5 +1,6 @@
 package com.gustavoraposo.roomexample.data.database
 
+import androidx.lifecycle.LiveData
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.gustavoraposo.roomexample.data.model.User

@@ -1,5 +1,6 @@
 package com.gustavoraposo.roomexample.data.repository
 
+import androidx.lifecycle.LiveData
 import com.gustavoraposo.roomexample.data.database.dao.UserDao
 import com.gustavoraposo.roomexample.data.database.toUser
 import com.gustavoraposo.roomexample.data.database.toUserEntity
@@ -15,7 +16,7 @@ class UserDataSource(private val userDao: UserDao): UserRepository{
         return userDao.getUser(id).toUser()
     }
 
-    override fun login(username: String, password: String): Long {
+    override fun login(username: String, password: String): LiveData<Long> {
         return userDao.login(username, password)
     }
 }

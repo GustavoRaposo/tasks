@@ -1,5 +1,6 @@
 package com.gustavoraposo.roomexample.data.database.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -16,5 +17,5 @@ interface UserDao {
     fun getUser(id: Long): UserEntity
 
     @Query("SELECT id FROM user WHERE username = :username and password = :password ")
-    fun login(username: String, password: String): Long
+    fun login(username: String, password: String): LiveData<Long>
 }
